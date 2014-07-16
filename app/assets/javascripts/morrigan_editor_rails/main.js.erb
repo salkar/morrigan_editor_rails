@@ -1,0 +1,13 @@
+$(function () {
+    $('[morrigan-editor="true"]').each(function () {
+        var container = $(this);
+        var width = container.attr('editor-width');
+        var height = container.attr('editor-height');
+        container.morrigan_editor({
+            iframeStyles: "<%= asset_path('morrigan_editor_rails/iframe.css') %>",
+            imageUpload: '/image/create',
+            width: width,
+            height: height
+        });
+    });
+});
