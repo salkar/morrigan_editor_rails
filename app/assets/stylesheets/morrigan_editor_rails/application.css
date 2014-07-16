@@ -11,4 +11,5 @@
  * file per style scope.
  *
  *= require 'morrigan_editor_rails/morrigan-jquery-editor.css'
+ *= require font-awesome
  */
