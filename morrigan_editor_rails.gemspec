@@ -9,9 +9,9 @@ Gem::Specification.new do |s|
   s.version     = MorriganEditorRails::VERSION
   s.authors     = ["Sergey Sokolov"]
   s.email       = ["sokolov.sergey.a@gmail.com"]
-  s.homepage    = "TODO"
-  s.summary     = "TODO: Summary of MorriganEditorRails."
-  s.description = "TODO: Description of MorriganEditorRails."
+  s.homepage    = "https://github.com/salkar/morrigan_editor_rails"
+  s.summary     = "Morrigan Editor for Ruby on Rails"
+  s.description = "Morrigan Editor for Ruby on Rails"
   s.license     = "MIT"
 
   s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
