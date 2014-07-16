@@ -1,3 +1,3 @@
-= MorriganEditorRails
+# Morrigan Editor for Ruby on Rails
 
-This project rocks and uses MIT-LICENSE.
+During development.
