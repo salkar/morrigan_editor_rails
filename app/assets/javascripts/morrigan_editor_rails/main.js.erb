@@ -5,7 +5,7 @@ $(function () {
         var height = container.attr('editor-height');
         container.morrigan_editor({
             iframeStyles: "<%= asset_path('morrigan_editor_rails/iframe.css') %>",
-            imageUpload: '/image/create',
+            imageUpload: 'morrigan_editor_rails/editor_images',
             width: width,
             height: height
         });
