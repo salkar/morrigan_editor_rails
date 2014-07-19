@@ -1,10 +1,11 @@
+<% environment.context_class.instance_eval { include MorriganEditorRails::ApplicationHelper } %>
 $(function () {
     $('[morrigan-editor="true"]').each(function () {
         var container = $(this);
         var width = container.attr('editor-width');
         var height = container.attr('editor-height');
         container.morrigan_editor({
-            iframeStyles: "<%= asset_path('morrigan_editor_rails/iframe.css') %>",
+            iframeStyles: "<%= iframe_stylesheet %>",
             imageUpload: 'morrigan_editor_rails/editor_images',
             width: width,
             height: height
