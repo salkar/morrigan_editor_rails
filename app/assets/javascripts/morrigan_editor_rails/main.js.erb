@@ -1,14 +1,24 @@
 <% environment.context_class.instance_eval { include MorriganEditorRails::ApplicationHelper } %>
 $(function () {
     $('[morrigan-editor="true"]').each(function () {
+        var textarea_str, textarea, form;
         var container = $(this);
         var width = container.attr('editor-width');
         var height = container.attr('editor-height');
-        container.morrigan_editor({
+        var editor = container.morrigan_editor({
             iframeStyles: "<%= iframe_stylesheet %>",
             imageUpload: 'morrigan_editor_rails/editor_images',
             width: width,
             height: height
         });
+        textarea_str = container.attr('editor-bound-textarea');
+        if (textarea_str) {
+            textarea = $(textarea_str);
+            form = textarea.closest('form');
+            form.submit( function () {
+                textarea.val(editor.morrigan_editor('html'));
+                return true;
+            });
+        }
     });
 });
