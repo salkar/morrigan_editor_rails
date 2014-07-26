@@ -19,6 +19,15 @@ $(function () {
                 textarea.val(editor.morrigan_editor('html'));
                 return true;
             });
+
+            if (textarea.parent().hasClass('has-error')) {
+                container.addClass('has-error');
+            }
+
+            if ($.trim(textarea.val()) != '') {
+                editor.morrigan_editor('html', textarea.val());
+            }
+
         }
     });
 });
