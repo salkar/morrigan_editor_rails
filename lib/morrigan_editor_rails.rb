@@ -43,9 +43,7 @@ module MorriganEditorRails
     end
 
     def self.preview_sanitize_config
-      {
-          :elements => ['p']
-      }
+      { }
     end
   end
 end
