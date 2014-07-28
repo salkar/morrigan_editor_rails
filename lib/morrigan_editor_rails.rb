@@ -13,6 +13,10 @@ module MorriganEditorRails
       Sanitize.fragment html, self.sanitize_config
     end
 
+    def self.preview_sanitize(html)
+      Sanitize.fragment html, self.preview_sanitize_config
+    end
+
     def self.sanitize_config
       {
           :elements => WHITELIST_ELEMENTS,
@@ -35,6 +39,12 @@ module MorriganEditorRails
           :protocols => {
               'a' => {'href' => ['http', 'https', 'mailto', 'ftp']}
           }
+      }
+    end
+
+    def self.preview_sanitize_config
+      {
+          :elements => ['p']
       }
     end
   end
