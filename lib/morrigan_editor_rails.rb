@@ -18,24 +18,19 @@ module MorriganEditorRails
     end
 
     def self.sanitize_config
-      {
-          :elements => WHITELIST_ELEMENTS,
+      relaxed_conf = Sanitize::Config::RELAXED
+      relaxed_conf.merge({
+          elements: (WHITELIST_ELEMENTS + relaxed_conf[:elements]).uniq,
 
-          :attributes => {
-              'a' => ['href'],
-              'p' => ['style'],
-              'img' => ['src', 'style'],
-              'iframe' => ['width', 'height', 'src', 'frameborder', 'allowfullscreen', 'wmode', 'style'],
-              'div' => ['style', 'contenteditable', 'class'],
-              'h2' => ['style'],
-              'h3' => ['style'],
-              'h4' => ['style']
-          },
+          attributes: merge(relaxed_conf[:attributes],
+            'iframe' => ['width', 'height', 'src', 'frameborder', 'allowfullscreen', 'wmode', 'style'],
+            'div' => ['contenteditable', 'class']
+          ),
 
-          :protocols => {
-              'a' => {'href' => ['http', 'https', 'mailto', 'ftp']}
-          }
-      }
+          protocols: merge(relaxed_conf[:protocols],
+            'a' => {'href' => ['http', 'https', 'mailto', 'ftp']}
+          )
+      })
     end
 
     def self.preview_sanitize_config
