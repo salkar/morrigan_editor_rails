@@ -22,12 +22,12 @@ module MorriganEditorRails
       relaxed_conf.merge({
           elements: (WHITELIST_ELEMENTS + relaxed_conf[:elements]).uniq,
 
-          attributes: merge(relaxed_conf[:attributes],
+          attributes: relaxed_conf[:attributes].merge(
             'iframe' => ['width', 'height', 'src', 'frameborder', 'allowfullscreen', 'wmode', 'style'],
             'div' => ['contenteditable', 'class']
           ),
 
-          protocols: merge(relaxed_conf[:protocols],
+          protocols: relaxed_conf[:protocols].merge(
             'a' => {'href' => ['http', 'https', 'mailto', 'ftp']}
           )
       })
