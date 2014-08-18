@@ -32,10 +32,6 @@ module MorriganEditorRails
               'h4' => ['style']
           },
 
-          :css => {
-              :properties => ['max-width', 'max-height', 'width', 'height', 'font-size', 'font-weight', 'color', 'font-family', 'text-align']
-          },
-
           :protocols => {
               'a' => {'href' => ['http', 'https', 'mailto', 'ftp']}
           }
