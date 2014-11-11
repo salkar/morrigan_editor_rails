@@ -52,3 +52,12 @@ To add custom stylesheet to editor:
   ```ruby
   Rails.application.config.assets.precompile += %w( your_file_name.css )
   ```
+  
+## Custom uploader
+You can use your uploader by put it in initializers with `MorriganEditorImageUploader` class name:
+
+```ruby
+class MorriganEditorImageUploader < CarrierWave::Uploader::Base
+  # your code here
+end
+```
