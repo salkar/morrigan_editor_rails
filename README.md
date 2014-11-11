@@ -34,3 +34,21 @@ Add to your HTML:
 <div morrigan-editor="true" id="editor" editor-width="100%" editor-height="300px" editor-bound-textarea="#textarea"></div>
 ```
 where `editor-bound-textarea` attribute is contains of selector of bound textarea (generated in editor html code will be passed in this textarea before form submit).
+
+## Custom stylesheet
+To add custom stylesheet to editor:
+
+1. Add initializer `morrigan_editor.rb` with next code:
+
+  ```ruby
+  module MorriganEditorRails
+    class Engine < Rails::Engine
+      config.iframe_css_file_name = 'your_file_name.css'
+    end
+  end
+  ```
+2. Add initializer `assets.rb` with next code (or add next code to this file if it is exists):
+
+  ```ruby
+  Rails.application.config.assets.precompile += %w( your_file_name.css )
+  ```
