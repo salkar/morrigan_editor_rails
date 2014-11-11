@@ -61,3 +61,6 @@ class MorriganEditorImageUploader < CarrierWave::Uploader::Base
   # your code here
 end
 ```
+
+## License
+© 2014 Sergey Sokolov. It is free software, and may be redistributed under the terms specified in the MIT-LICENSE file.
