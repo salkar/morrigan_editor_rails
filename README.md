@@ -62,5 +62,10 @@ class MorriganEditorImageUploader < CarrierWave::Uploader::Base
 end
 ```
 
+## Sanitization
+```ruby
+MorriganEditorRails::Editor.sanitize(html)
+```
+
 ## License
 © 2014 Sergey Sokolov. It is free software, and may be redistributed under the terms specified in the MIT-LICENSE file.
